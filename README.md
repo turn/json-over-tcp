@@ -1,4 +1,4 @@
-# json-over-tcp [![Build Status](https://secure.travis-ci.org/ozanturgut/json-over-tcp.png?branch=master)](http://travis-ci.org/ozanturgut/json-over-tcp)
+# jot (json-over-tcp) [![Build Status](https://secure.travis-ci.org/ozanturgut/json-over-tcp.png?branch=master)](http://travis-ci.org/ozanturgut/json-over-tcp)
 
 Node.js TCP server/client messaging in JSON.
 
@@ -9,7 +9,7 @@ You "write" JSON objects to the socket, and the "data" events on the other end o
 
 ## A Short Illustration
 ``` javascript
-// assume that I have a json-over-tcp server listening somewhere and I created a connection to it called "connection"
+// assume that I have a jot server listening somewhere and I created a connection to it called "connection"
 var someObject = {
   "this property is null": null,
   1928: 3734,
@@ -30,9 +30,9 @@ connection.write(someObject);
 // every second until the script is stopped.
 
 var someRandomPort = 8099,
-  jsonOverTCP = require('json-over-tcp');
+  jot = require('json-over-tcp');
 
-var server = jsonOverTCP.createServer(someRandomPort);
+var server = jot.createServer(someRandomPort);
 server.on('listening', createConnection);
 server.on('connection', newConnectionHandler);
 
@@ -53,7 +53,7 @@ function newConnectionHandler(socket){
 // Creates one connection to the server when the server starts listening
 function createConnection(){
   // Start a connection to the server
-  var socket = jsonOverTCP.connect(someRandomPort, function(){
+  var socket = jot.connect(someRandomPort, function(){
     // Send the initial message once connected
     socket.write({question: "Hello, world?"});
   });
@@ -77,28 +77,28 @@ server.listen(someRandomPort);
 
 ## API
 ### ```createServer([options], [connectionListener])```
-Factory function for creating a json-over-tcp server -- same options as [```net.createServer([options], [connectionListener])```](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener) in the Node.js net module documentation.
+Factory function for creating a jot server -- same options as [```net.createServer([options], [connectionListener])```](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener) in the Node.js net module documentation.
 ### ```connect(options, [connectionListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.connect(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.connect(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
 ### ```createConnection(options, [connectionListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.createConnection(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.createConnection(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
 ### ```connect(port, [host], [connectListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.connect(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.connect(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
 ### ```createConnection(options, [connectionListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.createConnection(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.createConnection(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
 ### ```connect(path, [connectListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.connect(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.connect(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
 ### ```createConnection(path, [connectListener])```
-Factory function for creating a json-over-tcp socket -- same options as [```net.createConnection(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
+Factory function for creating a jot socket -- same options as [```net.createConnection(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
 ### ```createProtocol(stream)```
-Factory function for creating a json-over-tcp protocol object.
+Factory function for creating a jot protocol object.
 ### ```createSocket([options])```
-Factory function for creating a json-over-tcp socket.
+Factory function for creating a jot socket.
 
 ### ```Server```
 >The server API is the same as the [```Server``` API in the native 'net' module](http://nodejs.org/api/net.html#net_class_net_server) with the following differences:
 ##### ```Event: 'connection'``` 
-Emits a json-over-tcp socket (see it's API below) instead of a plain tcp socket.
+Emits a jot socket (see it's API below) instead of a plain tcp socket.
 
 ### ```Socket```
 >The socket API is the same as the [```Socket``` API in the native 'net' module](http://nodejs.org/api/net.html#net_class_net_socket) with the following differences:
