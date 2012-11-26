@@ -22,6 +22,7 @@
   },
   "keywords": [
     "tcp",
+    "jot",
     "json",
     "json-over-tcp",
     "server",
