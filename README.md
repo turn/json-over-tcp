@@ -76,38 +76,39 @@ server.listen(someRandomPort);
 ```
 
 ## API
-### ```createServer([options], [connectionListener])```
-Factory function for creating a jot server -- same options as [```net.createServer([options], [connectionListener])```](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener) in the Node.js net module documentation.
-### ```connect(options, [connectionListener])```
-Factory function for creating a jot socket -- same options as [```net.connect(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
-### ```createConnection(options, [connectionListener])```
-Factory function for creating a jot socket -- same options as [```net.createConnection(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener) in the Node.js net module documentation.
-### ```connect(port, [host], [connectListener])```
-Factory function for creating a jot socket -- same options as [```net.connect(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
-### ```createConnection(options, [connectionListener])```
-Factory function for creating a jot socket -- same options as [```net.createConnection(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener) in the Node.js net module documentation.
-### ```connect(path, [connectListener])```
-Factory function for creating a jot socket -- same options as [```net.connect(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
-### ```createConnection(path, [connectListener])```
-Factory function for creating a jot socket -- same options as [```net.createConnection(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener) in the Node.js net module documentation.
-### ```createProtocol(stream)```
+The factory functions below behave similar to node's net package (but they return jot versions of the server or socket).
+### ```jot.createServer([options], [connectionListener])```
+See [```net.createServer([options], [connectionListener])```](http://nodejs.org/api/net.html#net_net_createserver_options_connectionlistener).
+### ```jot.connect(options, [connectionListener])```
+See [```net.connect(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener).
+### ```jot.createConnection(options, [connectionListener])```
+See [```net.createConnection(options, [connectionListener])```](http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener).
+### ```jot.connect(port, [host], [connectListener])```
+See [```net.connect(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener).
+### ```jot.createConnection(options, [connectionListener])```
+See [```net.createConnection(port, [host], [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_port_host_connectlistener).
+### ```jot.connect(path, [connectListener])```
+See [```net.connect(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener).
+### ```jot.createConnection(path, [connectListener])```
+See [```net.createConnection(path, [connectListener])```](http://nodejs.org/api/net.html#net_net_connect_path_connectlistener).
+### ```jot.createProtocol(stream)```
 Factory function for creating a jot protocol object.
-### ```createSocket([options])```
+### ```jot.createSocket([options])```
 Factory function for creating a jot socket.
 
-### ```Server```
+### ```jot.Server```
 >The server API is the same as the [```Server``` API in the native 'net' module](http://nodejs.org/api/net.html#net_class_net_server) with the following differences:
 ##### ```Event: 'connection'``` 
 Emits a jot socket (see it's API below) instead of a plain tcp socket.
 
-### ```Socket```
+### ```jot.Socket```
 >The socket API is the same as the [```Socket``` API in the native 'net' module](http://nodejs.org/api/net.html#net_class_net_socket) with the following differences:
 ##### ```Event: 'data'```
 Emits a JSON object which was sent by the other end of the socket.
 ##### ```write(obj)```
 Sends an object to the other end of the socket. This method doesn't accept any of the other parameters as the plain tcp socket.
 
-### ```Protocol```
+### ```jot.Protocol```
 > The protocol object is what serializes/deserializes JSON data over the wire.
 ##### new Protocol(stream)
 Takes in a [```Stream```](http://nodejs.org/api/stream.html) object and reads/writes JSON objects using it's a simple  protocol (a protocol signature, message length, and stringified JSON).
