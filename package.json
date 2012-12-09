@@ -1,10 +1,9 @@
 {
   "name": "json-over-tcp",
-  "version": "0.0.7",
+  "version": "0.2.0",
   "description": "TCP server/client messaging in JSON",
   "main": "index.js",
   "dependencies": {
-    "underscore": "~1.3.3",
     "precondition": "~1.0.0"
   },    
   "devDependencies": {
