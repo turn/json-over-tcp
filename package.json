@@ -4,7 +4,7 @@
   "description": "TCP server/client messaging in JSON",
   "main": "index.js",
   "dependencies": {
-    "precondition": "~1.0.0"
+    "its": "~1.0.0"
   },    
   "devDependencies": {
     "grunt": "~0.3.15"

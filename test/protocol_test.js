@@ -1,3 +1,5 @@
+"use strict";
+
 var Stream = require('stream');
 var jsonOverTCP = require('../index.js'),
 	Protocol = jsonOverTCP.Protocol,
@@ -35,7 +37,7 @@ exports.protocol = {
 			error = e;
 		}
 
-		test.ok(error instanceof ReferenceError, 'ReferenceError not thrown for invalid params');
+		test.ok(error instanceof TypeError, 'TypeError not thrown for invalid params');
 
 		test.done();
 	},

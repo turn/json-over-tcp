@@ -1,3 +1,5 @@
+"use strict";
+
 var net = require('net');
 var jsonOverTCP = require('../index.js'),
 	Server = jsonOverTCP.Server,
