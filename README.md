@@ -124,6 +124,5 @@ Emits a JSON object whenever a stream message is recieved.
 ## Protocol
 If you would like to implement the protocol yourself, the server will expect the following in order in the byte stream:
 
-1. 16-bit unsigned little-endian integer with 206 as the value. This is the protocol signature, if a message is sent without this signature a protocol error will be raised.
-2. A 32-bit unsigned little-endian integer with the length of the message being sent as the value.
-3. A UTF-8 string with the stringified JSON as the value (the message).
+1. A 32-bit unsigned little-endian integer with the length of the message being sent as the value.
+2. A UTF-8 string with the stringified JSON as the value (the message).

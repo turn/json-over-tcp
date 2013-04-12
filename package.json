@@ -1,6 +1,6 @@
 {
   "name": "json-over-tcp",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "TCP server/client messaging in JSON",
   "main": "index.js",
   "dependencies": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozanturgut/json-over-tcp.git"
+    "url": "https://github.com/turn/json-over-tcp.git"
   },
   "keywords": [
     "tcp",
@@ -35,7 +35,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ozanturgut/json-over-tcp/blob/master/LICENSE-MIT"
+      "url": "https://github.com/turn/json-over-tcp/blob/master/LICENSE-MIT"
     }
   ]
 }

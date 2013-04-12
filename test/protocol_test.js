@@ -100,26 +100,5 @@ exports.protocol = {
 		test.ok(error instanceof TypeError, "Invalid stream data didn't throw type error.");
 		
 		test.done();
-	},
-	invalidStreamData: function(test){
-		test.expect(1);
-		var buffer = new Buffer(10);
-		buffer.write("poop");
-		var stream = new EchoStream();
-
-		var protocol = new Protocol(stream);
-		protocol.on('data', function(data){
-			console.log(data);
-		});
-		var error;
-		try{
-			stream.write(buffer);	
-		} catch(e){
-			error = e;
-		}
-
-		test.ok(error instanceof ProtocolError, "Invalid stream data didn't throw type error.");
-		
-		test.done();	
 	}
 };
