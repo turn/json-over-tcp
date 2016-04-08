@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ozanturgut/json-over-tcp.git"
+    "url": "https://github.com/turn/json-over-tcp.git"
   },
   "keywords": [
     "tcp",
@@ -29,13 +29,12 @@
   ],
   "author": {
     "name": "Ozan Turgut",
-    "url": "http://oztu.org/",
-    "email": "ozanturgut@gmail.com"
+    "email": "unsetbit@gmail.com"
   },  
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ozanturgut/json-over-tcp/blob/master/LICENSE-MIT"
+      "url": "https://github.com/turn/json-over-tcp/blob/master/LICENSE-MIT"
     }
   ]
 }
